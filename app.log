@@ -1,0 +1,149 @@
+[2020-May-10 22:12:43] request from 127.0.0.1: {'ID': 1, 'data': 'data'}
+[2020-May-10 22:12:43] 127.0.0.1 POST http /predict? 5xx INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\Users\mailf\PycharmProjects\Insurance_API\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\mailf\PycharmProjects\Insurance_API\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\mailf\PycharmProjects\Insurance_API\venv\app.py", line 44, in predict
+    user_data = process_input(json_input)
+  File "C:\Users\mailf\PycharmProjects\Insurance_API\venv\process_data.py", line 97, in process_input
+    LicAge = json_input["LicAge"]
+KeyError: 'LicAge'
+
+[2020-May-10 22:19:26] 127.0.0.1 POST http /predict? 5xx INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\Users\mailf\PycharmProjects\Insurance_API\venv\lib\site-packages\werkzeug\wrappers\json.py", line 119, in get_json
+    rv = self.json_module.loads(data)
+  File "C:\Users\mailf\PycharmProjects\Insurance_API\venv\lib\site-packages\flask\json\__init__.py", line 253, in loads
+    return _json.loads(s, **kwargs)
+  File "C:\Users\mailf\AppData\Local\Programs\Python\Python37\lib\json\__init__.py", line 361, in loads
+    return cls(**kw).decode(s)
+  File "C:\Users\mailf\AppData\Local\Programs\Python\Python37\lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Users\mailf\AppData\Local\Programs\Python\Python37\lib\json\decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 3 column 1 (char 11)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\mailf\PycharmProjects\Insurance_API\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\mailf\PycharmProjects\Insurance_API\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\mailf\PycharmProjects\Insurance_API\venv\app.py", line 35, in predict
+    json_input = request.get_json(force=True)
+  File "C:\Users\mailf\PycharmProjects\Insurance_API\venv\lib\site-packages\werkzeug\wrappers\json.py", line 128, in get_json
+    rv = self.on_json_loading_failed(e)
+  File "C:\Users\mailf\PycharmProjects\Insurance_API\venv\lib\site-packages\flask\wrappers.py", line 25, in on_json_loading_failed
+    raise BadRequest("Failed to decode JSON object: {0}".format(e))
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting property name enclosed in double quotes: line 3 column 1 (char 11)
+
+[2020-May-10 22:20:41] request from 127.0.0.1: {'ID': 1, 'LicAge': 170, 'Gender': 'Male', 'MariStat': 'Alone', 'DrivAge': 33, 'HasKmLimit': 0, 'BonusMalus': 95, 'OutUseNb': 0, 'RiskArea': 10, 'VehUsage': 'Private+trip to office'}
+[2020-May-10 22:20:41] 127.0.0.1 POST http /predict? 5xx INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\Users\mailf\PycharmProjects\Insurance_API\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\mailf\PycharmProjects\Insurance_API\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\mailf\PycharmProjects\Insurance_API\venv\app.py", line 44, in predict
+    user_data = process_input(json_input)
+  File "C:\Users\mailf\PycharmProjects\Insurance_API\venv\process_data.py", line 123, in process_input
+    CSP1, CSP2, CP3, CP4, CP5, CP6, CP7,
+NameError: name 'CP3' is not defined
+
+[2020-May-10 22:22:30] request from 127.0.0.1: {'ID': 1, 'LicAge': 170, 'Gender': 'Male', 'MariStat': 'Alone', 'DrivAge': 33, 'HasKmLimit': 0, 'BonusMalus': 95, 'OutUseNb': 0, 'RiskArea': 10, 'VehUsage': 'Private+trip to office'}
+[2020-May-10 22:22:30] 127.0.0.1 POST http /predict? 5xx INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\Users\mailf\PycharmProjects\Insurance_API\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\mailf\PycharmProjects\Insurance_API\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\mailf\PycharmProjects\Insurance_API\venv\app.py", line 44, in predict
+    user_data = process_input(json_input)
+  File "C:\Users\mailf\PycharmProjects\Insurance_API\venv\process_data.py", line 123, in process_input
+    CSP1, CSP2, CP3, CP4, CP5, CP6, CP7,
+NameError: name 'CP3' is not defined
+
+[2020-May-10 22:24:03] request from 127.0.0.1: {'ID': 1, 'LicAge': 170, 'Gender': 'Male', 'MariStat': 'Alone', 'DrivAge': 33, 'HasKmLimit': 0, 'BonusMalus': 95, 'OutUseNb': 0, 'RiskArea': 10, 'VehUsage': 'Private+trip to office'}
+[2020-May-10 22:26:28] request from 127.0.0.1: {'ID': 1, 'LicAge': 170, 'Gender': 'Male', 'MariStat': 'Alone', 'DrivAge': 33, 'HasKmLimit': 0, 'BonusMalus': 95, 'OutUseNb': 0, 'RiskArea': 10, 'VehUsage': 'Private+trip to office'}
+[2020-May-10 22:27:25] request from 127.0.0.1: {'ID': 1, 'LicAge': 170, 'Gender': 'Male', 'MariStat': 'Alone', 'DrivAge': 33, 'HasKmLimit': 0, 'BonusMalus': 95, 'OutUseNb': 0, 'RiskArea': 10, 'VehUsage': 'Private+trip to office'}
+[2020-May-10 22:30:43] request from 127.0.0.1: {'ID': 1, 'LicAge': 170, 'Gender': 'Male', 'MariStat': 'Alone', 'DrivAge': 33, 'HasKmLimit': 0, 'BonusMalus': 95, 'OutUseNb': 0, 'RiskArea': 10, 'VehUsage': 'Private+trip to office'}
+[2020-May-10 22:31:17] request from 127.0.0.1: {'ID': 1, 'LicAge': 170, 'Gender': 'Male', 'MariStat': 'Alone', 'DrivAge': 33, 'HasKmLimit': 0, 'BonusMalus': 95, 'OutUseNb': 0, 'RiskArea': 10, 'VehUsage': 'Private+trip to office'}
+[2020-May-10 22:34:25] request from 127.0.0.1: {'ID': 1, 'LicAge': 170, 'Gender': 'Male', 'MariStat': 'Alone', 'DrivAge': 33, 'HasKmLimit': 0, 'BonusMalus': 95, 'OutUseNb': 0, 'RiskArea': 10, 'VehUsage': 'Private+trip to office'}
+[2020-May-10 22:35:56] request from 127.0.0.1: {'ID': 1, 'LicAge': 170, 'Gender': 'Male', 'MariStat': 'Alone', 'DrivAge': 33, 'HasKmLimit': 0, 'BonusMalus': 95, 'OutUseNb': 0, 'RiskArea': 10, 'VehUsage': 'Private+trip to office'}
+[2020-May-10 22:36:25] request from 127.0.0.1: {'ID': 1, 'LicAge': 170, 'Gender': 'Male', 'MariStat': 'Alone', 'DrivAge': 33, 'HasKmLimit': 0, 'BonusMalus': 95, 'OutUseNb': 0, 'RiskArea': 10, 'VehUsage': 'Private+trip to office'}
+[2020-May-10 22:41:44] request from 127.0.0.1: {'ID': 1, 'LicAge': 170, 'Gender': 'Male', 'MariStat': 'Alone', 'DrivAge': 33, 'HasKmLimit': 0, 'BonusMalus': 95, 'OutUseNb': 0, 'RiskArea': 10, 'VehUsage': 'Private+trip to office'}
+[2020-May-10 22:42:12] request from 127.0.0.1: {'ID': 1, 'LicAge': 170, 'Gender': 'Male', 'MariStat': 'Alone', 'DrivAge': 33, 'HasKmLimit': 0, 'BonusMalus': 95, 'OutUseNb': 0, 'RiskArea': 10, 'VehUsage': 'Private+trip to office'}
+[2020-May-10 22:44:01] request from 127.0.0.1: {'ID': 1, 'LicAge': 170, 'Gender': 'Male', 'MariStat': 'Alone', 'DrivAge': 33, 'HasKmLimit': 0, 'BonusMalus': 95, 'OutUseNb': 0, 'RiskArea': 10, 'VehUsage': 'Private+trip to office'}
+[2020-May-10 22:44:01] predicted for 0.008994 msec: {'ID': 1, 'ClaimInd': array([[8.7976289e-01, 1.4907815e-02, 4.6610054e-02, 3.0092170e-02,
+        2.2714145e-02, 4.5341519e-03, 8.8863488e-04, 4.7257240e-04,
+        1.1050267e-05, 2.5360121e-06, 3.9903389e-06]], dtype=float32)}
+
+[2020-May-10 22:45:29] request from 127.0.0.1: {'ID': 1, 'LicAge': 170, 'Gender': 'Male', 'MariStat': 'Alone', 'DrivAge': 33, 'HasKmLimit': 0, 'BonusMalus': 95, 'OutUseNb': 0, 'RiskArea': 10, 'VehUsage': 'Private+trip to office'}
+[2020-May-10 22:45:29] predicted for 0.011993 msec: {'ID': 1, 'ClaimInd': array([[8.7976289e-01, 1.4907815e-02, 4.6610054e-02, 3.0092170e-02,
+        2.2714145e-02, 4.5341519e-03, 8.8863488e-04, 4.7257240e-04,
+        1.1050267e-05, 2.5360121e-06, 3.9903389e-06]], dtype=float32)}
+
+[2020-May-10 22:47:04] request from 127.0.0.1: {'ID': 1, 'LicAge': 170, 'Gender': 'Male', 'MariStat': 'Alone', 'DrivAge': 33, 'HasKmLimit': 0, 'BonusMalus': 95, 'OutUseNb': 0, 'RiskArea': 10, 'VehUsage': 'Private+trip to office'}
+[2020-May-10 22:47:05] predicted for 0.353081 msec: {'ID': 1, 'ClaimInd': array([[8.7976289e-01, 1.4907815e-02, 4.6610054e-02, 3.0092170e-02,
+        2.2714145e-02, 4.5341519e-03, 8.8863488e-04, 4.7257240e-04,
+        1.1050267e-05, 2.5360121e-06, 3.9903389e-06]], dtype=float32)}
+
+[2020-May-10 23:01:15] request from 127.0.0.1: {'ID': 1, 'LicAge': 170, 'Gender': 'Male', 'MariStat': 'Alone', 'DrivAge': 33, 'HasKmLimit': 0, 'BonusMalus': 95, 'OutUseNb': 0, 'RiskArea': 10, 'VehUsage': 'Private+trip to office'}
+[2020-May-10 23:01:15] predicted for 0.052965 msec: {'ID': 1, 'ClaimInd': array([[8.7976289e-01, 1.4907815e-02, 4.6610054e-02, 3.0092170e-02,
+        2.2714145e-02, 4.5341519e-03, 8.8863488e-04, 4.7257240e-04,
+        1.1050267e-05, 2.5360121e-06, 3.9903389e-06]], dtype=float32)}
+
+[2020-May-10 23:05:09] request from 127.0.0.1: {'ID': 1, 'LicAge': 170, 'Gender': 'Male', 'MariStat': 'Alone', 'DrivAge': 33, 'HasKmLimit': 0, 'BonusMalus': 95, 'OutUseNb': 0, 'RiskArea': 10, 'VehUsage': 'Private+trip to office'}
+[2020-May-10 23:05:09] predicted for 0.038974 msec: {'ID': 1, 'ClaimInd': array([[8.7976289e-01, 1.4907815e-02, 4.6610054e-02, 3.0092170e-02,
+        2.2714145e-02, 4.5341519e-03, 8.8863488e-04, 4.7257240e-04,
+        1.1050267e-05, 2.5360121e-06, 3.9903389e-06]], dtype=float32)}
+
+[2020-May-10 23:34:31] request from 127.0.0.1: {'ID': 1, 'LicAge': 170, 'Gender': 'Male', 'MariStat': 'Alone', 'DrivAge': 33, 'HasKmLimit': 0, 'BonusMalus': 95, 'OutUseNb': 0, 'RiskArea': 10, 'VehUsage': 'Private+trip to office'}
+[2020-May-10 23:34:31] predicted for 0.134916 msec: {'ID': 1, 'ClaimInd': array([0])}
+
+[2020-May-10 23:35:52] request from 127.0.0.1: {'ID': 1, 'LicAge': 170, 'Gender': 'Male', 'MariStat': 'Alone', 'DrivAge': 33, 'HasKmLimit': 0, 'BonusMalus': 95, 'OutUseNb': 0, 'RiskArea': 10, 'VehUsage': 'Private+trip to office'}
+[2020-May-10 23:35:52] predicted for 0.03298 msec: {'ID': 1, 'ClaimInd': 0}
+
+[2020-May-10 23:36:58] request from 127.0.0.1: {'ID': 1, 'LicAge': 170, 'Gender': 'Male', 'MariStat': 'Alone', 'DrivAge': 33, 'HasKmLimit': 0, 'BonusMalus': 95, 'OutUseNb': 0, 'RiskArea': 10, 'VehUsage': 'Private+trip to office'}
+[2020-May-10 23:40:37] request from 127.0.0.1: {'ID': 1, 'LicAge': 170, 'Gender': 'Male', 'MariStat': 'Alone', 'DrivAge': 33, 'HasKmLimit': 0, 'BonusMalus': 95, 'OutUseNb': 0, 'RiskArea': 10, 'VehUsage': 'Private+trip to office'}
+[2020-May-10 23:40:37] predicted for 0.052969 msec: {'ID': 1, 'ClaimInd': 0}
+
+[2020-May-10 23:42:43] request from 127.0.0.1: {'ID': 1, 'LicAge': 170, 'Gender': 'Male', 'MariStat': 'Alone', 'DrivAge': 33, 'HasKmLimit': 0, 'BonusMalus': 95, 'OutUseNb': 0, 'RiskArea': 10, 'VehUsage': 'Private+trip to office'}
+[2020-May-10 23:42:43] predicted for 0.03098 msec: {'ID': 1, 'ClaimInd': 0}
+
+[2020-May-10 23:58:55] request from 127.0.0.1: {'ID': 1, 'LicAge': 468, 'RecordBeg': '2004-01-01', 'RecordEnd': '', 'VehAge': '', 'Gender': 'Male', 'MariStat': 'Other', 'SocioCateg': 'CSP50', 'VehUsage': 'Private', 'DrivAge': 67, 'HasKmLimit': 0, 'BonusMalus': 56, 'OutUseNb': 0, 'RiskArea': 0}
+[2020-May-10 23:58:55] predicted for 0.578515 msec: {'ID': 1, 'ClaimInd': 0}
+
+[2020-May-11 00:00:33] request from 127.0.0.1: {'ID': '1', 'LicAge': 10.0, 'RecordBeg': '2004-01-01', 'RecordEnd': '', 'VehAge': 5.0, 'Gender': 'Male', 'MariStat': 'Alone', 'SocioCateg': 'CSP50', 'VehUsage': 'Private', 'DrivAge': 18.0, 'HasKmLimit': 0, 'BonusMalus': 5.0, 'OutUseNb': 0, 'RiskArea': 0}
+[2020-May-11 00:00:33] predicted for 0.274855 msec: {'ID': '1', 'ClaimInd': 0}
+
+[2020-May-11 00:00:55] request from 127.0.0.1: {'ID': '1', 'LicAge': 0.0, 'RecordBeg': '2004-01-01', 'RecordEnd': '', 'VehAge': 20.0, 'Gender': 'Male', 'MariStat': 'Alone', 'SocioCateg': 'CSP50', 'VehUsage': 'Private', 'DrivAge': 20.0, 'HasKmLimit': 0, 'BonusMalus': 5.0, 'OutUseNb': 0, 'RiskArea': 0}
+[2020-May-11 00:00:55] predicted for 0.037976 msec: {'ID': '1', 'ClaimInd': 0}
+
+[2020-May-11 00:03:00] request from 127.0.0.1: {'ID': '1', 'LicAge': 0.0, 'RecordBeg': '2004-01-01', 'RecordEnd': '', 'VehAge': 30.0, 'Gender': 'Female', 'MariStat': 'Alone', 'SocioCateg': 'CSP50', 'VehUsage': 'Private', 'DrivAge': 18.0, 'HasKmLimit': 0, 'BonusMalus': 0.0, 'OutUseNb': 0, 'RiskArea': 0}
+[2020-May-11 00:03:00] predicted for 0.051968 msec: {'ID': '1', 'ClaimInd': 0}
+
+[2020-May-11 00:04:54] request from 127.0.0.1: {'ID': 1, 'LicAge': 1, 'RecordBeg': '2004-01-01', 'RecordEnd': '', 'VehAge': '', 'Gender': 'Male', 'MariStat': 'Other', 'SocioCateg': 'CSP50', 'VehUsage': 'Private', 'DrivAge': 1, 'HasKmLimit': 0, 'BonusMalus': 5, 'OutUseNb': 0, 'RiskArea': 0}
+[2020-May-11 00:04:55] predicted for 0.050963 msec: {'ID': 1, 'ClaimInd': 0}
+
+[2020-May-11 00:05:44] request from 127.0.0.1: {'ID': 1, 'LicAge': 1, 'RecordBeg': '2004-01-01', 'RecordEnd': '', 'VehAge': 30, 'Gender': 'Male', 'MariStat': 'Other', 'SocioCateg': 'CSP50', 'VehUsage': 'Private', 'DrivAge': 1, 'HasKmLimit': 0, 'BonusMalus': 0, 'OutUseNb': 0, 'RiskArea': 0}
+[2020-May-11 00:05:44] predicted for 0.044974 msec: {'ID': 1, 'ClaimInd': 0}
+
+[2020-May-11 00:06:32] request from 127.0.0.1: {'ID': 1, 'LicAge': 1, 'RecordBeg': '2004-01-01', 'RecordEnd': '', 'VehAge': 30, 'Gender': 'Male', 'MariStat': 'Other', 'SocioCateg': 'CSP50', 'VehUsage': 'Private', 'DrivAge': 1, 'HasKmLimit': 0, 'BonusMalus': 0, 'OutUseNb': 0, 'RiskArea': 1}
+[2020-May-11 00:06:32] predicted for 0.03198 msec: {'ID': 1, 'ClaimInd': 0}
+
+[2020-May-11 00:07:08] request from 127.0.0.1: {'ID': 1, 'LicAge': 170, 'Gender': 'Male', 'MariStat': 'Alone', 'DrivAge': 33, 'HasKmLimit': 0, 'BonusMalus': 95, 'OutUseNb': 0, 'RiskArea': 10, 'VehUsage': 'Private+trip to office'}
+[2020-May-11 00:07:08] predicted for 0.041975 msec: {'ID': 1, 'ClaimInd': 0}
+
+[2020-May-11 00:08:25] request from 127.0.0.1: {'ID': 1, 'LicAge': 17, 'Gender': 'Male', 'MariStat': 'Alone', 'DrivAge': 33, 'HasKmLimit': 0, 'BonusMalus': 5, 'OutUseNb': 0, 'RiskArea': 10, 'VehUsage': 'Private+trip to office'}
+[2020-May-11 00:08:25] predicted for 0.031981 msec: {'ID': 1, 'ClaimInd': 1}
+
+[2020-May-11 00:08:47] request from 127.0.0.1: {'ID': 1, 'LicAge': 1, 'RecordBeg': '2004-01-01', 'RecordEnd': '', 'VehAge': 30, 'Gender': 'Male', 'MariStat': 'Other', 'SocioCateg': 'CSP50', 'VehUsage': 'Private', 'DrivAge': 1, 'HasKmLimit': 0, 'BonusMalus': 0, 'OutUseNb': 0, 'RiskArea': 10}
+[2020-May-11 00:08:47] predicted for 0.040975 msec: {'ID': 1, 'ClaimInd': 0}
+
+[2020-May-11 00:09:24] request from 127.0.0.1: {'ID': 1, 'LicAge': 17, 'RecordBeg': '2004-01-01', 'RecordEnd': '', 'VehAge': 30, 'Gender': 'Male', 'MariStat': 'Other', 'SocioCateg': 'CSP50', 'VehUsage': 'Private+trip to office', 'DrivAge': 33, 'HasKmLimit': 0, 'BonusMalus': 0, 'OutUseNb': 0, 'RiskArea': 10}
+[2020-May-11 00:09:24] predicted for 0.031247 msec: {'ID': 1, 'ClaimInd': 1}
+

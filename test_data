@@ -1,0 +1,12 @@
+{
+"ID": 1,
+"LicAge": 170,
+"Gender": "Male",
+"MariStat": "Alone",
+"DrivAge": 33,
+"HasKmLimit": 0,
+"BonusMalus": 95,
+"OutUseNb": 0,
+"RiskArea": 10,
+"VehUsage": "Private+trip to office"
+}
